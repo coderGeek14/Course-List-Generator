@@ -24,3 +24,21 @@ const courses = [
 		price: "1200",
 	},
 ];
+
+window.addEventListener("load",generateList)
+// window.onload = generateList();
+
+button.addEventListener('click',()=>{
+    if(buttonBoolean === true){
+        courses.sort((a,b) => a.price - b.price);
+        button.style.backgroundColor="red";
+        buttonBoolean=(!buttonBoolean);
+    }
+    else{
+        courses.sort((a,b) => b.price - a.price);
+        button.style.backgroundColor="blue";
+        buttonBoolean=(!buttonBoolean);
+    }
+    ul.innerHTML="";
+    generateList();
+});
